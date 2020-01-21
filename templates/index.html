@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Text Analyzer </title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+  </head>
+  <body>
+     <div class="container">
+        <form class="form-signin"  role="form">
+<br>
+<br>
+        <!--<h3 class="form-signin-heading">Enter a long text to summarize</h3>-->
+    <div class="alert alert-success">
+  <strong>Welcome to Text Analyzer!</strong> You can simply summarize your long boring article or text on this page. Have fun! 
+</div>   
+<label for="comment">Write or paste your text into this text field:</label>
+       <textarea id="inputText" name="longText" class="form-control" rows="5" placeholder="" required autofocus></textarea>
+        <!--<input type="text" id="inputText" name="longText" class="form-control" placeholder="" required autofocus>-->
+        <button class="btn btn-lg btn-success btn-lg" id="submitButton" type="button">Summarize Now</button>
+	</form>   
+     </div> 
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          Text is missing!
+        </div>
+        <div class="modal-body">
+          <p>Please enter a text to continue.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="myShortModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          Notice
+        </div>
+        <div class="modal-body">
+          <p>To get a good text summary result we advise you to enter a longer text. (+800 words) </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+ <div class="jumbotron" id="summary">
+<h4>Here is your summary:</h4>
+     <div id="result"></div>
+ </divY
+
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/analyze.js') }}"></script>
+
+  </body>
+</html>
